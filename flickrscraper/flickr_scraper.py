@@ -246,7 +246,7 @@ class FlickrScraper:
             [query, (x * pages_per_core), (x * pages_per_core) + pages_per_core]
             for x in range(num_cores)
         ]
-        # Handle the case where pages cannot be evently distributed to processes, throw the extras to the last process.
+        # Handle the case where pages cannot be evenly distributed to processes, throw the extras to the last process.
         if num_pages % num_cores != 0:
             remainder = num_pages % num_cores
             args[-1][2] += remainder
